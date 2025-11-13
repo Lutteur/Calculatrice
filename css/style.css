@@ -1,0 +1,69 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	max-width: 100vw;
+	height: 100vh;
+	display: flex; /* Centrer le contenu à l'aide d'un flex */
+	justify-content: center; /* Centrer le contenu à l'aide d'un flex */
+	align-items: center; /* Centrer le contenu à l'aide d'un flex */
+	font-family: sans-serif;
+	background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #ffcc00 50%, #000000 100%);
+	/* Dégradé linéaire passant du noir à une teinte gris foncé, puis au jaune vif puis noir */
+	background-size: 400% 400%; /* Fond agrandie 4 fois, l'animation peut déplacer le dégraddé de façon fluide */
+	animation: helldiversBackground 20s ease infinite; /* Animation toutes les 20 secondes à l'infini */
+}
+
+/* Bouge le fond horizontalement */
+@keyframes helldiversBackground {
+	0% { background-position: 0% 50%; } /* Fond a gauche au début */
+	50% { background-position: 100% 50%; } /* Fond se déplace a droite au milieu */
+	100% { background-position: 0% 50%; } /* Revient a la position initiale */
+}
+
+.calculatrice{
+	background-color: #1a1a1a; /* fond sombre */
+	border: 2px solid #ffcc00; /* bordure jaune vif */
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+}
+
+.ecran{
+	width: 100%;
+	height: 100px;
+	background-color: #000;
+	color: #ffcc00; /* Couleur texte */
+	margin-bottom: 10px;
+	border: 2px inset white; /* Effet de bord enfoncé comme un ecran */
+	border-radius: 5px;
+	display: flex;
+	justify-content: flex-end; /*Aligner le resultat de la calculatrice en bas a droite*/
+	align-items: flex-end; /*Aligner le resultat de la calculatrice en bas a droite*/
+	padding: 10px;
+	font-size: 25px;
+	font-family: 'Orbitron', sans-serif;
+}
+
+.touches{
+	display: grid;
+	grid-template-columns: repeat(4, 50px); /* Creer une grille de boutons de 5(largeur) par 4(longueur) qui font 50 pixels de haut*/
+	grid-template-rows: repeat(5, 50px);
+	grid-gap: 7px; /* Espace entre les touches*/
+}
+
+/* Style des boutons */
+.touches button {
+	background-color: #2b2b2b;
+	color: #ffcc00;
+	border: 1px;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.2s, transform 0.1s;
+}
